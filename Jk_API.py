@@ -200,9 +200,29 @@ https://requests.readthedocs.io/en/master/user/quickstart/
 
 
 # In[ ]:
+#Using postman to do put with different parameters and getting the code in python
+url1 = "https://sv443.net/jokeapi/v2/submit"
 
+payloadd = "{\r\n    \"formatVersion\": 2,\r\n    \"category\": \"Programming\",\r\n    \"type\": \"twopart\",\r\n    \"flags\": {\r\n        \"nsfw\": true,\r\n        \"religious\": true,\r\n        \"political\": true,\r\n        \"racist\": false,\r\n        \"sexist\": false\r\n    },\r\n    \"setup\": \"That is the way it has always been \",\r\n    \"delivery\": \"It just change\"\r\n}"
+headers = {
+'Content-Type': 'application/json'
+}
 
-import requests
+response = requests.request("PUT", url1, headers=headers, data = payloadd)
+
+print(response.text.encode('utf8'))
+#Same scenario but different parameters
+url = "https://sv443.net/jokeapi/v2/submit"
+
+payload = "{\r\n    \"formatVersion\": 2,\r\n    \"category\": \"Miscellaneous\",\r\n    \"type\": \"single\",\r\n    \"flags\": {\r\n        \"nsfw\": true,\r\n        \"religious\": true,\r\n        \"political\": false,\r\n        \"racist\": false,\r\n        \"sexist\": false\r\n    },\r\n    \"joke\": \"1+1 =11\\n2+2 =22\\n3+3 =33\\n...\\n10+10=1010\"\r\n}"
+headers = {
+'Content-Type': 'application/json'
+}
+
+response = requests.put( url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+#
 
 url = "https://sv443.net/jokeapi/v2/submit"
 
