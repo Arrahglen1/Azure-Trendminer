@@ -15,8 +15,10 @@ import random
 
 # An API call can have different types (GET / POST / PUT / DELETE)
 # Example of a simple GET to get a random joke
+payload = {'category': 'Programming', 'type': 'twopart', 'flags': {'nsfw': False, 'religious': False, 'political': False, 'racist': False, 'sexist': False}}
+payloads =  {'category': 'Programming', 'type': 'single', 'flags': {'nsfw': True, 'religious': True, 'political': False, 'racist': False, 'sexist': False}}
 result = requests.get('https://sv443.net/jokeapi/v2/joke/Programming?type=twopart' , params=payload)
-ralo = requests.get('https://sv443.net/jokeapi/v2/joke/Programming,Dark?type=twopart')
+ralo = requests.get('https://sv443.net/jokeapi/v2/joke/Programming,Dark?type=twopart', params=payloads)
 trado = requests.get('https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,political&type=twopart&idRange=216')
 ###########
 # If you play around with the "Try it out here:" on https://sv443.net/jokeapi/v2/#getting-started
