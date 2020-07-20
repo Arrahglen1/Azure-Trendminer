@@ -187,12 +187,10 @@ print(Dalo.json())
 
 # In[ ]:
 
+#payload = {'key1': 'value1', 'key2': 'value2'}
 
-Stijn Meganck12:40
-payload = {'key1': 'value1', 'key2': 'value2'}
-
-r = requests.post("https://httpbin.org/post", data=payload)
-print(r.text)
+#r = requests.post("https://httpbin.org/post", data=payload)
+#print(r.text)
 
 
 # In[ ]:
@@ -210,8 +208,7 @@ url = "https://sv443.net/jokeapi/v2/submit"
 
 payload = "{\r\n    \"formatVersion\": 2,\r\n    \"category\": \"Programming\",\r\n    \"type\": \"twopart\",\r\n    \"flags\": {\r\n        \"nsfw\": true,\r\n        \"religious\": true,\r\n        \"political\": true,\r\n        \"racist\": false,\r\n        \"sexist\": false\r\n    },\r\n    \"setup\": \"That is the way it has always been \",\r\n    \"delivery\": \"It just change\"\r\n}"
 headers = {
-'Content-Type': 'application/json',
-'Cookie': '__cfduid=d3eed45382d61ceb184d66bf09f2f928c1594913653'
+'Content-Type': 'application/json'
 }
 
 response = requests.request("PUT", url, headers=headers, data = payload)
@@ -228,8 +225,7 @@ url = "https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religio
 
 payload = "{\r\n    \"category\": \"Programming\",\r\n    \"type\": \"twopart\",\r\n    \"setup\": \"Why did the programmer quit his job?\",\r\n    \"delivery\": \"Because He didn't get arrays.\",\r\n    \"flags\": {\r\n        \"nsfw\": false,\r\n        \"religious\": false,\r\n        \"political\": false,\r\n        \"racist\": false,\r\n        \"sexist\": false\r\n    },\r\n    \"id\": 16,\r\n    \"error\": false\r\n}"
 headers = {
-		'Content-Type': 'application/json',
-		'Cookie': '__cfduid=d3eed45382d61ceb184d66bf09f2f928c1594913653'
+		'Content-Type': 'application/json'
 }
 
 response = requests.request("GET", url, headers=headers, data = payload)
