@@ -234,7 +234,16 @@ print(response.text.encode('utf8'))
 
 
 # In[ ]:
+url = "https://httpbin.org/post"
 
+payload = {}
+headers= {}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+#view the server’s response headers using a Python dictionary
+response.headers
 
 
 
