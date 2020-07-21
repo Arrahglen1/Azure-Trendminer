@@ -97,7 +97,13 @@ sult2 = sult1.json()
 
 
 # In[ ]:
-
+#'ID range': {'idRange': [1-2,4-5,6-8,9-11]},
+   # "ID range": {
+   # "idRange": 1-2,
+   # "idRange": 4-5,
+   # "idRange": 6-8,
+   ## "idRange": 9-11
+   # },
 
 
 
